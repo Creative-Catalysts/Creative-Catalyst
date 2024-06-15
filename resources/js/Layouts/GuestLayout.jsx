@@ -1,18 +1,14 @@
-import ApplicationLogo from '@/Components/ApplicationLogo';
-import { Link } from '@inertiajs/react';
+import Footer from "@/Components/Footer";
+import Header from "@/Components/Header";
 
 export default function Guest({ children }) {
     return (
-        <div className="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-            <div>
-                <Link href="/">
-                    <ApplicationLogo className="w-20 h-20 fill-current text-gray-500" />
-                </Link>
-            </div>
-
-            <div className="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+        <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
+            <Header />
+            <main className="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white m-6">
                 {children}
-            </div>
+            </main>
+            <Footer />
         </div>
     );
 }

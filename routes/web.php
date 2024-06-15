@@ -24,4 +24,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::fallback(function () {
+    // abort(500);
+    return Inertia::render('NotFound', ['message' => 'Not Found'])->toResponse(request())->setStatusCode(404);
+});
+
 require __DIR__.'/auth.php';
